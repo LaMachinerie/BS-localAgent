@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/LaMachinerie/raspizza#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "lite-avrgirl-lillypad": "^1.0.3",
     "portscanner": "^2.2.0"
