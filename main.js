@@ -118,7 +118,7 @@ Builder.compile = function (res) {
     " -fqbn=arduino:" + compilerFlag +
     " " + basepath + "/sketch/sketch.ino";
 
-  child(compilerPath + parameters, function (err, data) {
+  child('sudo ' + compilerPath + parameters, function (err, data) {
     console.log(err)
     var hex = undefined; 
     try {
