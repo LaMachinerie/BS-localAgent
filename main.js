@@ -104,8 +104,7 @@ Builder.compile = function (res) {
   var method = method;
   
   
-  if(Setting.getRobot() == "2") compilerFlag = "avr:uno"
-  else compilerFlag = "avr:LilyPadUSB"
+  compilerFlag = "avr:LilyPadUSB"
 
   var basepath = app.getAppPath();
   var child = require('child_process').execFile;
