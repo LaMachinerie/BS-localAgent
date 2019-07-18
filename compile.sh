@@ -1,4 +1,4 @@
-arduino-builder \
+./opt/BS-localAgent/builder/arduino-builder \
 -compile \
 -verbose=false \
 -hardware /usr/share/arduino/hardware \
