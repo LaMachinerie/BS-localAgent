@@ -107,18 +107,18 @@ Builder.compile = function (res) {
   
   compilerFlag = "avr:LilyPadUSB"
 
-  var child = require('child_process').spawn;
-  var parameters = ["-compile",
-    "-verbose=false",
-    "-hardware=" + basepath + "/builder/hardware",
-    "-build-path=" + basepath + "/build",
-    "-tools=" + basepath + "/builder/hardware/tools/avr",
-    "-tools=" + basepath + "/builder/tools-builder",
-    "-libraries=" + basepath + "/builder/libraries",
-    "-fqbn=arduino:" + compilerFlag,
-    "" + basepath + "/sketch/sketch.ino"];
+  var child = require('child_process').exec;
+  var parameters = " -compile" +
+    " -verbose=false" +
+    " -hardware=" + basepath + "/builder/hardware" +
+    " -build-path=" + basepath + "/build" +
+    " -tools=" + basepath + "/builder/hardware/tools/avr" +
+    " -tools=" + basepath + "/builder/tools-builder" +
+    " -libraries=" + basepath + "/builder/libraries" +
+    " -fqbn=arduino:" + compilerFlag +
+    " " + basepath + "/sketch/sketch.ino";
 
-  child(compilerPath , parameters, function (err, data) {
+  child(compilerPath + parameters, function (err, data) {
     console.log(err)
     var hex = undefined; 
     try {
