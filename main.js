@@ -108,7 +108,7 @@ Builder.compile = function (res) {
   compilerFlag = "avr:LilyPadUSB"
 
   var child = require('child_process').exec;
-  var parameters = [" -compile" +
+  var parameters = " -compile" +
     " -verbose=false" +
     " -hardware=" + basepath + "/builder/hardware" +
     " -build-path=" + basepath + "/build" +
@@ -116,7 +116,7 @@ Builder.compile = function (res) {
     " -tools=" + basepath + "/builder/tools-builder" +
     " -libraries=" + basepath + "/builder/libraries" +
     " -fqbn=arduino:" + compilerFlag +
-    " " + basepath + "/sketch/sketch.ino"];
+    " " + basepath + "/sketch/sketch.ino";
 
   child(compilerPath + parameters, function (err, data) {
     console.log(err)
