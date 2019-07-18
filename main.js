@@ -13,6 +13,8 @@ app.use(cors());
 var path = require('path');
 var basePath = path.resolve(__dirname);
 
+console.log(basePath);
+
 var Blink = "void setup() {pinMode(13, OUTPUT);}void loop() {digitalWrite(13, HIGH);delay(1000);digitalWrite(13, LOW);delay(1000);}"
 
 page = '<!DOCTYPE html>' +
