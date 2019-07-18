@@ -6,6 +6,8 @@ const cors          = require('cors')
 const bodyParser    = require('body-parser')
 const app           = express();
 
+const fs            = require('fs');
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -72,7 +74,6 @@ app.post('/', function (req, res) {
 app.post('/upload', function (req, res) {
     var code= req.body.code;
 
-    var fs = require('fs');
     try { fs.writeFileSync(basepath + '/sketch/sketch.ino', code, 'utf-8'); }
     catch (e) { console.log('Failed to save the file : '); console.log(e); res.end("fail"); return;}
 
