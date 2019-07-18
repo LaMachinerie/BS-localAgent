@@ -97,7 +97,7 @@ app.post('/upload', function (req, res) {
 */
 
 var Builder = {};
-const executablePath = "sudo arduino-builder";
+const executablePath = "arduino-builder";
 
 
 Builder.compile = function (res) {
@@ -107,7 +107,7 @@ Builder.compile = function (res) {
   
   compilerFlag = "avr:LilyPadUSB"
 
-  var child = require('child_process').execFile;
+  var child = require('child_process').exec;
   var parameters = ["-compile",
     "-verbose=false",
     "-hardware=" + basepath + "/builder/hardware",
