@@ -70,7 +70,7 @@ app.post('/upload', function (req, res) {
 
     var fs = require('fs');
     try { fs.writeFileSync(basePath + '/sketch/sketch.ino', code, 'utf-8'); }
-    catch (e) { console.log('Failed to save the file !'); res.end("fail"); return;}
+    catch (e) { console.log('Failed to save the file : '); console.log(e); res.end("fail"); return;}
 
     console.log(code);
     Builder.compile(res);
