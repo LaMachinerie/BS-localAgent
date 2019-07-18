@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 var path = require('path');
-var basePath = path.resolve(__dirname);
+var basepath = path.resolve(__dirname);
 
-console.log(basePath);
+console.log(basepath);
 
 var Blink = "void setup() {pinMode(13, OUTPUT);}void loop() {digitalWrite(13, HIGH);delay(1000);digitalWrite(13, LOW);delay(1000);}"
 
@@ -73,7 +73,7 @@ app.post('/upload', function (req, res) {
     var code= req.body.code;
 
     var fs = require('fs');
-    try { fs.writeFileSync(basePath + '/sketch/sketch.ino', code, 'utf-8'); }
+    try { fs.writeFileSync(basepath + '/sketch/sketch.ino', code, 'utf-8'); }
     catch (e) { console.log('Failed to save the file : '); console.log(e); res.end("fail"); return;}
 
     console.log(code);
