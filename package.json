@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LaMachinerie/raspizza.git"
+    "url": "git+https://github.com/LaMachinerie/BS-localAgent.git"
   },
   "keywords": [
     "lillypad"
