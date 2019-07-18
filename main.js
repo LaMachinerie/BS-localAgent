@@ -106,7 +106,6 @@ Builder.compile = function (res) {
   
   compilerFlag = "avr:LilyPadUSB"
 
-  var basepath = app.getAppPath();
   var child = require('child_process').execFile;
   var parameters = ["-compile",
     "-verbose=false",
