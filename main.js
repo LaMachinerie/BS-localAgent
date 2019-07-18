@@ -97,7 +97,7 @@ app.post('/upload', function (req, res) {
 */
 
 var Builder = {};
-const executablePath = "arduino-builder";
+const executablePath = "sudo arduino-builder";
 
 
 Builder.compile = function (res) {
