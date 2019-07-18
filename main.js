@@ -8,6 +8,7 @@ const app           = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
 var Blink = "void setup() {pinMode(13, OUTPUT);}void loop() {digitalWrite(13, HIGH);delay(1000);digitalWrite(13, LOW);delay(1000);}"
 
 page = '<!DOCTYPE html>' +
@@ -65,6 +66,67 @@ app.post('/', function (req, res) {
 app.post('/upload', function (req, res) {
     var code= req.body.code;
 
+    var fs = require('fs');
+    try { fs.writeFileSync(basePath + '/sketch/sketch.ino', code, 'utf-8'); }
+    catch (e) { console.log('Failed to save the file !'); res.end("fail"); return;}
+
     console.log(code);
-    res.end("compiling : \n" + code);
+    Builder.compile(res);
+    //res.end(code);
 });
+
+
+
+
+
+/************************************************
+*
+*
+*					Builder
+*
+*
+*
+*************************************************
+*/
+
+var Builder = {};
+const executablePath = "arduino-builder";
+
+
+Builder.compile = function (res) {
+  compilerPath = executablePath;
+  var method = method;
+  
+  
+  if(Setting.getRobot() == "2") compilerFlag = "avr:uno"
+  else compilerFlag = "avr:LilyPadUSB"
+
+  var basepath = app.getAppPath();
+  var child = require('child_process').execFile;
+  var parameters = ["-compile",
+    "-verbose=false",
+    "-hardware=" + basepath + "/builder/hardware",
+    "-build-path=" + dataPath + "/build",
+    "-tools=" + basepath + "/builder/hardware/tools/avr",
+    "-tools=" + basepath + "/builder/tools-builder",
+    "-libraries=" + basepath + "/builder/libraries",
+    "-fqbn=arduino:" + compilerFlag,
+    "" + basepath + "/sketch/sketch.ino"];
+
+  child(compilerPath, parameters, function (err, data) {
+    console.log(err)
+    var hex = undefined; 
+    try {
+        hex = fs.readFileSync(basePath + + '/build/sketch.ino.hex');
+    } catch (error) {
+        err = error;
+    }
+    
+    if(err){
+        res.end("fail");
+        console.log(err);
+    }
+    else
+        res.end(hex);
+  });
+}
