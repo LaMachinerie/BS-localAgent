@@ -122,7 +122,8 @@ Builder.compile = function (res) {
     console.log(err)
     var hex = undefined; 
     try {
-        hex = fs.readFileSync(basePath + + '/build/sketch.ino.hex');
+        hex = fs.readFileSync(basepath + + '/build/sketch.ino.hex');
+        console.log(hex);
     } catch (error) {
         err = error;
     }
