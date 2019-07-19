@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "",
+  "builtInLibrariesFolders": "",
+  "customBuildProperties": "",
+  "fqbn": "arduino:avr:LilyPadUSB",
+  "hardwareFolders": "/usr/share/arduino/hardware",
+  "otherLibrariesFolders": "/usr/share/arduino/libraries",
+  "runtime.ide.version": "10600",
+  "sketchLocation": "/opt/BS-localAgent/sketch/sketch.ino",
+  "toolsFolders": "/usr/share/arduino/hardware/tools/avr,/usr/share/arduino/tools-builder"
+}

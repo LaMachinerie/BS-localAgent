@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "/usr/share/arduino/hardware/arduino/avr/cores/arduino"
+  },
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "/usr/share/arduino/hardware/arduino/avr/variants/leonardo"
+  },
+  {
+    "Sourcefile": "/opt/BS-localAgent/build/sketch/sketch.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  }
+]

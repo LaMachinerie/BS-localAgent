@@ -53,7 +53,7 @@ page = '<!DOCTYPE html>' +
 pageEnd = '</p>' +
     '      <form>' +
     '       <input name="code" type="hidden" value="' + Blink + '">' +
-    '       <input name="type" type="hidden" value="upload">' +    
+    '       <input name="type" type="hidden" value="compile">' +    
     '       <button type="submit" formaction="/upload" formmethod="post">Upload Blink.ino</button>' +
     '      </form>' +
     '    </div>' +
@@ -71,11 +71,14 @@ app.post('/', function (req, res) {
     res.end("OK");
 });
 
-app.post('/upload', function (req, res) {
-    var code= req.body.code;
-
-    try { fs.writeFileSync(basepath + '/sketch/sketch.ino', code, 'utf-8'); }
-    catch (e) { console.log('Failed to save the file : '); console.log(e); res.end("fail"); return;}
+app.post('/compile', function (req, res) {
+    var base64encoded = req.body.data;
+    var code = Blink;
+    if(base64encoded != undefined){
+      code = Buffer.from(base64encoded, 'base64').toString('utf8');
+      try { fs.writeFileSync(basepath + '/sketch/sketch.ino', code, 'utf-8'); }
+      catch (e) { console.log('Failed to save the file : '); console.log(e); res.end("fail"); return;}
+    }
 
     console.log(code);
     Builder.compile(res);
@@ -97,37 +100,24 @@ app.post('/upload', function (req, res) {
 */
 
 var Builder = {};
-const executablePath = "arduino-builder";
+const executablePath = "~/../opt/BS-localAgent/compile.sh";
 
 
 Builder.compile = function (res) {
-  compilerPath = executablePath;
-  var method = method;
-  
-  
-  compilerFlag = "avr:LilyPadUSB"
+  script = executablePath;
 
   var child = require('child_process').exec;
-  var parameters = " -compile" +
-    " -verbose=false" +
-    " -hardware=" + basepath + "/builder/hardware" +
-    " -build-path=" + basepath + "/build" +
-    " -tools=" + basepath + "/builder/hardware/tools/avr" +
-    " -tools=" + basepath + "/builder/tools-builder" +
-    " -libraries=" + basepath + "/builder/libraries" +
-    " -fqbn=arduino:" + compilerFlag +
-    " " + basepath + "/sketch/sketch.ino";
 
-  child(compilerPath + parameters, function (err, data) {
+  child(script, function (err, data) {
     console.log(err)
-    var hex = undefined; 
+    var hex = undefined;
     try {
         hex = fs.readFileSync(basepath + '/build/sketch.ino.hex');
         console.log(hex);
     } catch (error) {
         err = error;
     }
-    
+
     if(err){
         res.end("fail");
         console.log(err);
