@@ -15,7 +15,14 @@ app.use(cors());
 var path = require('path');
 var basepath = path.resolve(__dirname);
 
-console.log(basepath);
+//console.log(basepath);
+
+var corsOptions = {
+    origin: 'http://botly-studio.fr',
+    optionsSuccessStatus: 200
+}
+  
+
 
 var Blink = "void setup() {pinMode(13, OUTPUT);}void loop() {digitalWrite(13, HIGH);delay(1000);digitalWrite(13, LOW);delay(1000);}"
 
@@ -60,18 +67,23 @@ pageEnd = '</p>' +
     '  </body>' +
     '</html>';
 
+
+
 var port = 3000;
 page += port + pageEnd;
-app.listen(port);
 
+app.listen(port);
 
 app.get('/', (req, res) => res.send(page))
 
-app.post('/', function (req, res) {
+app.options('/products/:id', cors(corsOptions)) // enable pre-flight request for DELETE request
+
+
+app.post('/', cors(corsOptions), function (req, res) {
     res.end("OK");
 });
 
-app.post('/compile', function (req, res) {
+app.post('/compile', cors(corsOptions) ,function (req, res) {
     var base64encoded = req.body.data;
     var code = Blink;
     if(base64encoded != undefined){
