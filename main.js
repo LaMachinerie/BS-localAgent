@@ -18,7 +18,7 @@ var basepath = path.resolve(__dirname);
 //console.log(basepath);
 
 var corsOptions = {
-    origin: 'http://botly.fr',
+    origin: 'http://botly-studio.fr',
     optionsSuccessStatus: 200
 }
   
