@@ -11,6 +11,166 @@
   },
   {
     "Sourcefile": "/opt/BS-localAgent/build/sketch/sketch.ino.cpp",
+    "Include": "Botly.h",
+    "Includepath": "/usr/share/arduino/libraries/Botly-Library/src"
+  },
+  {
+    "Sourcefile": "/opt/BS-localAgent/build/sketch/sketch.ino.cpp",
+    "Include": "Servo.h",
+    "Includepath": "/usr/share/arduino/libraries/Servo/src"
+  },
+  {
+    "Sourcefile": "/opt/BS-localAgent/build/sketch/sketch.ino.cpp",
+    "Include": "IRremote.h",
+    "Includepath": "/usr/share/arduino/libraries/IRremote"
+  },
+  {
+    "Sourcefile": "/opt/BS-localAgent/build/sketch/sketch.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/Botly-Library/src/Botly.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/Botly-Library/src/BotlySteppers.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/Servo/src/avr/Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/Servo/src/nrf52/Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/Servo/src/sam/Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/Servo/src/samd/Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/Servo/src/stm32f4/Servo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/IRremote.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/esp32.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/irPronto.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/irRecv.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/irSend.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Aiwa.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Denon.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Dish.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_JVC.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_LG.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Lego_PF.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Mitsubishi.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_NEC.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Panasonic.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_RC5_RC6.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Samsung.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Sanyo.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Sharp.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Sony.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Template.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/ir_Whynter.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/usr/share/arduino/libraries/IRremote/sam.cpp",
     "Include": "",
     "Includepath": ""
   }

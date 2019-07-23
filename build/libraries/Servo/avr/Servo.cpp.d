@@ -1,5 +1,5 @@
-/opt/BS-localAgent/build/sketch/sketch.ino.cpp.o: \
- /opt/BS-localAgent/build/sketch/sketch.ino.cpp \
+/opt/BS-localAgent/build/libraries/Servo/avr/Servo.cpp.o: \
+ /usr/share/arduino/libraries/Servo/src/avr/Servo.cpp \
  /usr/share/arduino/hardware/arduino/avr/cores/arduino/Arduino.h \
  /usr/share/arduino/hardware/arduino/avr/cores/arduino/binary.h \
  /usr/share/arduino/hardware/arduino/avr/cores/arduino/WCharacter.h \
@@ -13,10 +13,5 @@
  /usr/share/arduino/hardware/arduino/avr/cores/arduino/USBDesc.h \
  /usr/share/arduino/hardware/arduino/avr/cores/arduino/USBCore.h \
  /usr/share/arduino/hardware/arduino/avr/variants/leonardo/pins_arduino.h \
- /usr/share/arduino/libraries/Botly-Library/src/Botly.h \
  /usr/share/arduino/libraries/Servo/src/Servo.h \
- /usr/share/arduino/libraries/Servo/src/avr/ServoTimers.h \
- /usr/share/arduino/libraries/IRremote/IRremote.h \
- /usr/share/arduino/libraries/IRremote/IRremoteInt.h \
- /usr/share/arduino/libraries/IRremote/boarddefs.h \
- /usr/share/arduino/libraries/Botly-Library/src/BotlySteppers.h
+ /usr/share/arduino/libraries/Servo/src/avr/ServoTimers.h

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 //Raspizza JS remote Arduino uploader
 
 //Web interaction library
@@ -112,7 +113,7 @@ app.post('/compile', cors(corsOptions) ,function (req, res) {
 */
 
 var Builder = {};
-const executablePath = "~/../opt/BS-localAgent/compile.sh";
+const executablePath = "/opt/BS-localAgent/compile.sh";
 
 
 Builder.compile = function (res) {
@@ -134,7 +135,10 @@ Builder.compile = function (res) {
         res.end("fail");
         console.log(err);
     }
-    else
-        res.end(hex);
+    else{
+        var base64Code = Buffer.from(hex, 'hex').toString('base64')
+        console.log(base64Code)
+        res.end(base64Code);
+    }
   });
 }
