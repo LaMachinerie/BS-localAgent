@@ -97,7 +97,7 @@ app.post('/compile', cors(corsOptions), function (req, res) {
         }
     }else{
         console.log('Nothing received ...')
-        reuturn;
+        return;
     }
 
     console.log("UTF-8 Code : " + code);
