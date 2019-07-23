@@ -98,7 +98,8 @@ app.post('/compile', cors(corsOptions), function (req, res) {
         }
     }else{
         console.log('Nothing received ...')
-        res.end(req);
+        console.log(req);
+        res.end("fail");
         return;
     }
 
