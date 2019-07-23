@@ -11,7 +11,7 @@ const express    = require('express')
 const app        = express()
 
 app.use(cors());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 var basepath    = path.resolve(__dirname);
 
@@ -82,7 +82,7 @@ app.options('/compile', cors(corsOptions)) // enable pre-flight request for OPTI
 
 app.post('/compile', cors(corsOptions), function (req, res) {
     console.log(req);
-    return;
+    //return;
     var base64encoded = req.body.data;
     var code = Blink;
     console.log("Base 64 Code : " + base64encoded);
