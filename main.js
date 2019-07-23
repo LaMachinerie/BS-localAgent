@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 //Raspizza JS remote Arduino uploader
 
 //Web interaction library
