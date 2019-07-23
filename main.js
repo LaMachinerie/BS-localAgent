@@ -134,8 +134,10 @@ Builder.compile = function (res) {
         res.end("fail");
         console.log(err);
     }
-    else
-        
-        res.end(Buffer.from(hex, 'hex').toString('base64'));
+    else{
+        var base64Code = Buffer.from(hex, 'hex').toString('base64')
+        console.log(base64Code)
+        res.end(base64Code);
+    }    
   });
 }
