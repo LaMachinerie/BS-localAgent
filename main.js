@@ -9,7 +9,7 @@ const app = express();
 
 const fs = require('fs');
 
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -76,12 +76,13 @@ app.listen(port);
 
 app.get('/', (req, res) => res.send(page))
 
-app.options('/products/:id', cors(corsOptions)) // enable pre-flight request for DELETE request
-
+app.options('/', cors(corsOptions)) // enable pre-flight request for OPTIONS request
 
 app.post('/', cors(corsOptions), function (req, res) {
     res.end("OK");
 });
+
+app.options('/compile', cors(corsOptions)) // enable pre-flight request for OPTIONS request
 
 app.post('/compile', cors(corsOptions), function (req, res) {
     var base64encoded = req.body.data;
@@ -97,6 +98,7 @@ app.post('/compile', cors(corsOptions), function (req, res) {
         }
     }else{
         console.log('Nothing received ...')
+        res.end(req);
         return;
     }
 
