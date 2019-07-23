@@ -2,27 +2,22 @@
 //Raspizza JS remote Arduino uploader
 
 //Web interaction library
-const express = require('express')
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const app = express();
+const express   = require('express')
+    , cors      = require('cors')
+    , fs        = require('fs')
+    , path      = require('path');
+    
+const app       = express()
 
-const fs = require('fs');
-
-//app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 app.use(cors());
 
-var path = require('path');
-var basepath = path.resolve(__dirname);
-
+var path        = require('path');
+var basepath    = path.resolve(__dirname);
 
 var corsOptions = {
     origin: 'http://botly-studio.fr',
     optionsSuccessStatus: 200
 }
-
-
 
 var Blink = "void setup() {pinMode(13, OUTPUT);}void loop() {digitalWrite(13, HIGH);delay(1000);digitalWrite(13, LOW);delay(1000);}"
 
