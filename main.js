@@ -136,12 +136,14 @@ Builder.compile = function (res) {
             hex = fs.readFileSync(basepath + '/build/sketch.ino.hex');
             console.log('COMPILED HEX : ' + hex);
         } catch (error) {
-            err = error;
+            res.end("fail");
+            console.log(err);
+            return;
         }
 
         if (err) {
             res.end("fail");
-            console.log(err);
+            console.log('Fail : ' + err);
         }
         else {
             var base64Code = Buffer.from(hex, 'hex').toString('base64')
