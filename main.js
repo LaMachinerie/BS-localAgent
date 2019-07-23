@@ -11,7 +11,6 @@ const app       = express()
 
 app.use(cors());
 
-var path        = require('path');
 var basepath    = path.resolve(__dirname);
 
 var corsOptions = {
