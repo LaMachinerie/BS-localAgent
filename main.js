@@ -2,14 +2,16 @@
 //Raspizza JS remote Arduino uploader
 
 //Web interaction library
-const express   = require('express')
-    , cors      = require('cors')
-    , fs        = require('fs')
-    , path      = require('path');
+const express    = require('express')
+    , cors       = require('cors')
+    , bodyParser = require('body-parser')
+    , fs         = require('fs')
+    , path       = require('path');
     
-const app       = express()
+const app        = express()
 
 app.use(cors());
+app.use(bodyParser.json())
 
 var basepath    = path.resolve(__dirname);
 
