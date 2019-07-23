@@ -79,6 +79,7 @@ app.post('/', cors(corsOptions), function (req, res) {
 app.options('/compile', cors(corsOptions)) // enable pre-flight request for OPTIONS request
 
 app.post('/compile', cors(corsOptions), function (req, res) {
+    console.log(req);
     var base64encoded = req.body.data;
     var code = Blink;
     console.log("Base 64 Code : " + base64encoded);
