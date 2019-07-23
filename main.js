@@ -61,7 +61,7 @@ pageEnd = '</p>' +
     '      <form>' +
     '       <input name="code" type="hidden" value="' + Blink + '">' +
     '       <input name="type" type="hidden" value="compile">' +    
-    '       <button type="submit" formaction="/upload" formmethod="post">Upload Blink.ino</button>' +
+    '       <button type="submit" formaction="/compile" formmethod="post">Upload Blink.ino</button>' +
     '      </form>' +
     '    </div>' +
     '  </body>' +
@@ -135,6 +135,7 @@ Builder.compile = function (res) {
         console.log(err);
     }
     else
-        res.end(hex);
+        
+        res.end(Buffer.from(hex, 'hex').toString('base64'));
   });
 }
