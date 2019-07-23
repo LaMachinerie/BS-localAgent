@@ -86,6 +86,7 @@ app.post('/', cors(corsOptions), function (req, res) {
 app.post('/compile', cors(corsOptions), function (req, res) {
     var base64encoded = req.body.data;
     var code = Blink;
+    console.log("Base 64 Code : " + base64encoded);
     if (base64encoded != undefined) {
         code = Buffer.from(base64encoded, 'base64').toString('utf8');
         try { fs.writeFileSync(basepath + '/sketch/sketch.ino', code, 'utf-8'); }
@@ -94,9 +95,12 @@ app.post('/compile', cors(corsOptions), function (req, res) {
             console.log(e); res.end("fail");
             return;
         }
+    }else{
+        console.log('Nothing received ...')
+        reuturn;
     }
 
-    console.log(code);
+    console.log("UTF-8 Code : " + code);
     Builder.compile(res);
     //res.end(code);
 });
@@ -125,11 +129,11 @@ Builder.compile = function (res) {
     var child = require('child_process').exec;
 
     child(script, function (err, data) {
-        console.log(err)
+        console.log('Error : ' + err);
         var hex = undefined;
         try {
             hex = fs.readFileSync(basepath + '/build/sketch.ino.hex');
-            console.log(hex);
+            console.log('COMPILED HEX : ' + hex);
         } catch (error) {
             err = error;
         }
@@ -140,7 +144,7 @@ Builder.compile = function (res) {
         }
         else {
             var base64Code = Buffer.from(hex, 'hex').toString('base64')
-            console.log(base64Code)
+            console.log('COMPILED Base64 : ' + base64Code)
             res.end(base64Code);
         }
     });
