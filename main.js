@@ -112,7 +112,7 @@ app.post('/compile', cors(corsOptions) ,function (req, res) {
 */
 
 var Builder = {};
-const executablePath = "~/../opt/BS-localAgent/compile.sh";
+const executablePath = "/opt/BS-localAgent/compile.sh";
 
 
 Builder.compile = function (res) {
